@@ -1,7 +1,10 @@
 <form>
     <input type="number" [(ngModel)]="num1" name="num1">
-    <input type="number" [(ngModel)]="num2"name="num2">
-     <button (click)="onClickSum()">Somar</button>   
-     {{sum}}
+    <input type="number" [(ngModel)]="num2" name="num2">
+  
+    <button (click)="onClickCalculate('soma')">Somar</button>
+    <button (click)="onClickCalculate('subtrai')">Subtrair</button>
 
-</form>
+  
+    <p *ngIf="operation">{{num1}} {{operation}} {{num2}} = {{result}}</p>
+  </form>
