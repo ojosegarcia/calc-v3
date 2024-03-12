@@ -9,34 +9,34 @@ export class FormCalcComponent {
   num1: number = 0;
   num2: number = 0;
   result: number = 0;
-  operation: string = '';
 
-  onClickCalculate(operation: string) {
-    switch (operation) {
-      case 'somar':
-        this.result = this.num1 + this.num2;
-        break;
-      case 'subtrai':
-        this.result = this.num1 - this.num2;
-        break;
-      case 'multiply':
-        this.result = this.num1 * this.num2;
-        break;
-      case 'divide':
-        this.result = this.num1 / this.num2;
-        break;
-      case 'exponent':
-        this.result = Math.pow(this.num1, this.num2);
-        break;
-      case 'sqrt':
-        this.result = Math.sqrt(this.num1);
-        break;
-      case 'percentage':
-        this.result = (this.num1 * this.num2) / 100;
-        break;
-      default:
-        this.result = 0;
+  onClickSum() {
+    this.result = this.num1 + this.num2;
+  }
+
+  onClickSubtract() {
+    this.result = this.num1 - this.num2;
+  }
+
+  onClickMultiply() {
+    this.result = this.num1 * this.num2;
+  }
+
+  onClickDivide() {
+    if (this.num2 === 0) {
+      this.result = NaN; //se dividir por zero
+    } else {
+      this.result = this.num1 / this.num2;
     }
-    this.operation = operation;
+  }
+
+  onClickPercentage() {
+    this.result = (this.num1 / 100) * this.num2;
+  }
+
+  onClickClear() {
+    this.num1 = 0;
+    this.num2 = 0;
+    this.result = 0;
   }
 }

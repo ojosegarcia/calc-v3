@@ -1,10 +1,14 @@
 <form>
-    <input type="number" [(ngModel)]="num1" name="num1">
-    <input type="number" [(ngModel)]="num2" name="num2">
-  
-    <button (click)="onClickCalculate('soma')">Somar</button>
-    <button (click)="onClickCalculate('subtrai')">Subtrair</button>
-    <button (click)="onClickCalculate('multiplica')">Multiplicar</button>
-  
-    <p *ngIf="operation">{{num1}} {{operation}} {{num2}} = {{result}}</p>
-  </form>
+  <input type="number" [(ngModel)]="num1" name="num1" placeholder="Enter first number">
+  <input type="number" [(ngModel)]="num2" name="num2" placeholder="Enter second number">
+
+  <button (click)="onClickSum()">Somar</button>
+  <button (click)="onClickSubtract()">Subtrair</button>
+  <button (click)="onClickMultiply()">Multiplicar</button>
+  <button (click)="onClickDivide()">Dividir</button>
+  <button (click)="onClickPercentage()">Porcentagem</button>
+  <button (click)="onClickClear()">Limpar</button>
+
+  <br>
+  <span>Resultado: {{ result }}</span>
+</form>
